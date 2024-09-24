@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <h1>Guess the number</h1>
+    <input id="input">
+    <button onclick="start()">start</button>
+    <h2 id="dis">display</h2>
+    <h2 id="rw">Right/Wrong</h2>
+    <h2 id="score">score :</h2>
+</div>
+    
+</body>
+</html>
+
+<script>
+    var dis=document.getElementById('dis')
+    var input=document.getElementById('input')
+    var score=document.getElementById('score')
+    var rw=document.getElementById('rw')
+    var sc=10
+    function start()
+    {
+        var a=Math.random()
+        var res=Math.floor(a*10)
+        dis.textContent="random number : "+res
+        console.log(input.value)
+        if(res==input.value)
+        {
+            rw.textContent="Right"
+            alert("you won the game")
+        }
+        else{
+            rw.textContent="Wrong"
+            sc-=1
+            score.textContent="score : "+sc
+        }
+        if(sc==0)
+        {
+            alert("you lose the game")
+        }
+    }
+</script>
+
+<style>
+div{
+    text-align: center;
+    background: linear-gradient(blue,black);
+    color: aliceblue;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 8px 8px 8px 0px;
+    margin: 100px;
+}
+body{
+    background: linear-gradient(rgb(17, 0, 255),rgb(0, 0, 0));
+    background-attachment: fixed ;
+}
+button{
+    background-color: rgb(4, 56, 155);
+    color: aliceblue;
+    padding: 20px;
+    border-radius: 100px;
+    border-color: aliceblue;
+}
+input{
+    border-radius: 10px;
+    border-style: ridge;
+}
+</style>
